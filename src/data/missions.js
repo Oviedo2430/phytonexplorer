@@ -62,8 +62,7 @@ export const MISSIONS = [
 ]
 
 export const RESOURCES = [
-  { emoji: '🐢', name: 'Turtle — Dibujar con código', type: 'Módulo Python', desc: 'Dibuja formas con comandos. Viene instalado con Python.', url: null },
+  { emoji: '🐢', name: 'Turtle — Dibujar con código', type: 'Módulo Python', desc: 'Dibuja formas con comandos. Viene instalado con Python. Busca "Python Turtle" en Google.', url: null },
   { emoji: '🎮', name: 'Pygame — Juegos con gráficos', type: 'Librería Python', desc: 'Cuando termines el plan, puedes hacer juegos con imágenes y sonido.', url: 'https://www.pygame.org' },
-  { emoji: '🌍', name: 'Minecraft + Python', type: 'Proyecto especial', desc: 'Con Minecraft Education Edition puedes programar dentro del juego. Busca "Minecraft Education Python" en Google.', url: 'https://education.minecraft.net/en-us/resources/python-tutorial' },
-  { emoji: '📺', name: 'CS Dojo — Python para principiantes', type: 'YouTube', desc: 'Videos cortos y claros (subtítulos en español).', url: 'https://youtube.com/@csdojo' },
+  { emoji: '📺', name: 'CS Dojo — Python para principiantes', type: 'YouTube', desc: 'Videos cortos y claros (subtítulos en español disponibles).', url: 'https://youtube.com/@csdojo' },
 ]
