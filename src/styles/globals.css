@@ -1,0 +1,22 @@
+:root {
+  --bg: #080c14;
+  --bg-card: #0d1627;
+  --border: #1e2d4a;
+  --border-dim: #111827;
+  --text: #e2e8f0;
+  --text-muted: #7c93c3;
+  --text-dim: #4a6080;
+  --blue: #3b82f6;
+  --blue-dark: #1e40af;
+  --purple: #8b5cf6;
+  --green: #16a34a;
+  --green-light: #86efac;
+  --font-mono: 'Courier New', monospace;
+  --font-ui: 'Segoe UI', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-ui); background: var(--bg); color: var(--text); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+button { cursor: pointer; font-family: inherit; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
