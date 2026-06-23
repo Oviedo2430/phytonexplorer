@@ -28,8 +28,8 @@ export const MISSIONS = [
     tools: ['VS Code (opcional)', 'Thonny sigue funcionando'],
     lessons: [
       { title: 'def — Crear tu propia función', detail: 'Construyes una herramienta una vez y la usas siempre.', starterCode: 'def saludar():\n    print("¡Hola, explorador!")\n    print("Bienvenido a la misión.")\n\nsaludar()\nsaludar()' },
-      { title: 'Parámetros — Personalizar la función', detail: 'Como piezas de Lego que encajan de formas distintas.', starterCode: 'def saludar(nombre):\n    print(f"¡Hola, {nombre}!")\n\nsaludar("Mateo")\nsaludar("Comandante")\nsaludar("Explorador Espacial")' },
-      { title: 'return — La función te devuelve algo', detail: 'Le preguntas cuánto es 5×8 y te responde 40.', starterCode: 'def multiplicar(a, b):\n    return a * b\n\nresultado = multiplicar(5, 8)\nprint("5 × 8 =", resultado)\nprint("7 × 7 =", multiplicar(7, 7))' },
+      { title: 'Parámetros — Personalizar la función', detail: 'Como piezas de Lego que encajan de formas distintas.', starterCode: 'def saludar(nombre):\n    print(f"¡Hola, {nombre}!")\n\nsaludar("Mateo")\nsaludar("Comandante")' },
+      { title: 'return — La función te devuelve algo', detail: 'Le preguntas cuánto es 5×8 y te responde 40.', starterCode: 'def multiplicar(a, b):\n    return a * b\n\nprint("5 × 8 =", multiplicar(5, 8))\nprint("7 × 7 =", multiplicar(7, 7))' },
       { title: 'Funciones dentro de funciones', detail: 'Combinar herramientas para cosas más complejas.', starterCode: 'def area(largo, ancho):\n    return largo * ancho\n\ndef describir(nombre, largo, ancho):\n    print(f"{nombre}: {largo}m × {ancho}m = {area(largo, ancho)} m²")\n\ndescribir("Base Espacial", 10, 8)' },
     ],
     project: { name: '🌍 Calculadora de peso en planetas', desc: 'Calcula cuánto pesarías en cada planeta del sistema solar.',
@@ -64,6 +64,6 @@ export const MISSIONS = [
 export const RESOURCES = [
   { emoji: '🐢', name: 'Turtle — Dibujar con código', type: 'Módulo Python', desc: 'Dibuja formas con comandos. Viene instalado con Python.', url: null },
   { emoji: '🎮', name: 'Pygame — Juegos con gráficos', type: 'Librería Python', desc: 'Cuando termines el plan, puedes hacer juegos con imágenes y sonido.', url: 'https://www.pygame.org' },
-  { emoji: '🌍', name: 'mcpi — Controlar Minecraft con Python', type: 'Proyecto especial', desc: 'Con Minecraft Education Edition puedes programar dentro del juego.', url: 'https://mcpipy.readthedocs.io' },
+  { emoji: '🌍', name: 'Minecraft + Python', type: 'Proyecto especial', desc: 'Con Minecraft Education Edition puedes programar dentro del juego. Busca "Minecraft Education Python" en Google.', url: 'https://education.minecraft.net/en-us/resources/python-tutorial' },
   { emoji: '📺', name: 'CS Dojo — Python para principiantes', type: 'YouTube', desc: 'Videos cortos y claros (subtítulos en español).', url: 'https://youtube.com/@csdojo' },
 ]

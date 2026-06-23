@@ -3,24 +3,39 @@ import { MISSIONS } from '../data/missions'
 import { useProgress } from '../hooks/useProgress'
 import { ProgressBar } from '../components/ProgressBar'
 
-export function MapPage() {
+export function MapPage({ user, onLogout }) {
   const navigate = useNavigate()
-  const { getMissionProgress, totalStats } = useProgress()
+  const { getMissionProgress, totalStats } = useProgress(user?.username)
   const stats = totalStats(MISSIONS)
+
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
-      <div style={{ background: 'linear-gradient(160deg,#0d0d2b,#1a0a2e)', borderBottom: '1px solid var(--border)', padding: '32px 20px 24px', textAlign: 'center' }}>
-        <div style={{ fontSize: 48, marginBottom: 8 }}>🐍🚀</div>
-        <h1 style={{ fontSize: 28, fontWeight: 900, letterSpacing: -1, color: '#fff', margin: 0 }}>Python Explorer</h1>
-        <p style={{ color: 'var(--text-muted)', margin: '6px 0 20px', fontSize: 15 }}>Aprende a programar con misiones espaciales</p>
-        <div style={{ maxWidth: 360, margin: '0 auto', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border)', borderRadius: 12, padding: '12px 18px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 8 }}>
-            <span style={{ color: 'var(--text-muted)' }}>Progreso total</span>
-            <span style={{ color: 'var(--blue)', fontWeight: 700 }}>{stats.done}/{stats.total} · {stats.pct}%</span>
+      <div style={{ background: 'linear-gradient(160deg,#0d0d2b,#1a0a2e)', borderBottom: '1px solid var(--border)', padding: '24px 20px' }}>
+
+        {/* Barra superior */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
+          <div style={{ fontSize: 13, color: 'var(--text-muted)' }}>
+            👤 <span style={{ color: '#93c5fd', fontWeight: 700 }}>{user?.username}</span>
           </div>
-          <ProgressBar pct={stats.pct} />
+          <button onClick={onLogout} style={{ background: 'transparent', border: '1px solid var(--border)', borderRadius: 8, padding: '4px 12px', color: 'var(--text-muted)', fontSize: 12, cursor: 'pointer' }}>
+            Cerrar sesión
+          </button>
+        </div>
+
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: 44, marginBottom: 6 }}>🐍🚀</div>
+          <h1 style={{ fontSize: 26, fontWeight: 900, letterSpacing: -1, color: '#fff', margin: 0 }}>Python Explorer</h1>
+          <p style={{ color: 'var(--text-muted)', margin: '6px 0 20px', fontSize: 14 }}>Aprende a programar con misiones espaciales</p>
+          <div style={{ maxWidth: 360, margin: '0 auto', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border)', borderRadius: 12, padding: '12px 18px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 8 }}>
+              <span style={{ color: 'var(--text-muted)' }}>Progreso total</span>
+              <span style={{ color: 'var(--blue)', fontWeight: 700 }}>{stats.done}/{stats.total} · {stats.pct}%</span>
+            </div>
+            <ProgressBar pct={stats.pct} />
+          </div>
         </div>
       </div>
+
       <div style={{ maxWidth: 560, margin: '0 auto', padding: '24px 16px' }}>
         <p style={{ fontSize: 13, color: 'var(--text-dim)', textAlign: 'center', marginBottom: 20 }}>Completa las misiones en orden — cada una desbloquea la siguiente</p>
         {MISSIONS.map((m, idx) => {

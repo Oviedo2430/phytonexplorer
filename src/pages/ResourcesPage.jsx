@@ -1,11 +1,18 @@
 import { useNavigate } from 'react-router-dom'
 import { RESOURCES } from '../data/missions'
-export function ResourcesPage() {
+
+export function ResourcesPage({ user, onLogout }) {
   const navigate = useNavigate()
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
       <div style={{ background: 'linear-gradient(160deg,#0d0d2b,#1a0a2e)', borderBottom: '1px solid var(--border)', padding: '16px 20px' }}>
-        <button onClick={() => navigate('/')} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: 14, cursor: 'pointer', marginBottom: 12 }}>← Mapa de misiones</button>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+          <button onClick={() => navigate('/')} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: 14, cursor: 'pointer' }}>← Mapa de misiones</button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <span style={{ fontSize: 12, color: '#93c5fd' }}>👤 {user?.username}</span>
+            <button onClick={onLogout} style={{ background: 'transparent', border: '1px solid var(--border)', borderRadius: 8, padding: '3px 10px', color: 'var(--text-muted)', fontSize: 12, cursor: 'pointer' }}>Salir</button>
+          </div>
+        </div>
         <h1 style={{ margin: 0, fontSize: 22, fontWeight: 800 }}>📚 Recursos</h1>
         <p style={{ margin: '4px 0 0', color: 'var(--text-muted)', fontSize: 14 }}>Herramientas y materiales extra</p>
       </div>
