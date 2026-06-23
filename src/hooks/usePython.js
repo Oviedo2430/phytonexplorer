@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 
-const API = import.meta.env.VITE_PISTON_URL || 'https://alcaldia-phyton.ei9yfj.easypanel.host'
+const API = 'https://alcaldia-phyton.ei9yfj.easypanel.host'
 
 export function usePython() {
   const [output, setOutput] = useState('')
@@ -22,7 +22,8 @@ export function usePython() {
     } catch (e) {
       setError(`No se pudo conectar.\n${e.message}`)
     } finally {
-      setRunning(false) }
+      setRunning(false)
+    }
   }, [])
 
   const clear = useCallback(() => { setOutput(''); setError(null) }, [])
