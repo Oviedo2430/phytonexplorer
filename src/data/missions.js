@@ -40,11 +40,27 @@ export const MISSIONS = [
     ],
     project: {
       name: '🤖 Bot presentador espacial',
-      desc: 'Un programa que pregunta tu nombre y edad, y te presenta como agente espacial.',
-      code: `nombre = input("¿Cuál es tu nombre de agente? ")\nedad   = input("¿Cuántos años tienes? ")\nplaneta = input("¿Cuál es tu planeta favorito? ")\n\nprint()\nprint("╔══════════════════════════════╗")\nprint("║    BASE ESPACIAL ALFA-7      ║")\nprint("╠══════════════════════════════╣")\nprint("║  Nombre  :", nombre)\nprint("║  Edad    :", edad, "años")\nprint("║  Destino :", planeta)\nprint("║  Estado  : ACTIVO 🟢")\nprint("╚══════════════════════════════╝")\nprint()\nprint("Bienvenido a la misión, agente", nombre)`,
+      desc: '✏️ Cambia las variables en las líneas 3, 4 y 5 con tus datos. Luego ejecuta.',
+      code: `# ✏️ CAMBIA ESTOS VALORES POR LOS TUYOS:
+nombre  = "Explorador"    # ← escribe tu nombre aquí
+edad    = "12"            # ← escribe tu edad aquí
+planeta = "Marte"         # ← escribe tu planeta favorito
+
+# No cambies nada de aquí abajo
+print()
+print("╔══════════════════════════════╗")
+print("║    BASE ESPACIAL ALFA-7      ║")
+print("╠══════════════════════════════╣")
+print("║  Nombre  :", nombre)
+print("║  Edad    :", edad, "años")
+print("║  Destino :", planeta)
+print("║  Estado  : ACTIVO 🟢")
+print("╚══════════════════════════════╝")
+print()
+print("Bienvenido a la misión, agente", nombre)`,
     },
   },
-  {
+    {
     id: 2, emoji: '🧱', title: 'Bloques de construcción', subtitle: 'Decisiones y repetición',
     weeks: 'Semanas 3–4',
     description: 'Python puede tomar decisiones y repetir cosas. Como los bloques de Minecraft.',
