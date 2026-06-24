@@ -3,17 +3,17 @@ import { useState, useCallback } from 'react'
 const API = 'https://alcaldia-phyton.ei9yfj.easypanel.host'
 
 export function usePython() {
-  const [output, setOutput] = useState('')
+  const [output, setOutput]   = useState('')
   const [running, setRunning] = useState(false)
-  const [error, setError] = useState(null)
+  const [error, setError]     = useState(null)
 
-  const run = useCallback(async (code) => {
+  const run = useCallback(async (code, stdin = '') => {
     setRunning(true); setError(null); setOutput('')
     try {
       const res = await fetch(`${API}/execute`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ code })
+        body: JSON.stringify({ code, stdin })
       })
       if (!res.ok) throw new Error(`Error ${res.status}`)
       const data = await res.json()
